@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+/* Variables Globales */
+:root {
+    --primary-color: rgb(10, 137, 223);
+    --secondary-color: rgb(4, 88, 184);
+    --accent-color: rgb(253, 77, 24);
+    --background-color: rgb(238, 238, 238);
+    --text-color: rgb(68, 68, 68);
+    --border-color: rgb(122, 122, 122);
+    --font-main: 'Ubuntu', sans-serif;
+    --font-title: 'Comfortaa', sans-serif;
+}
+
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Título */
+.titulo {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: var(--font-title);
+    color: var(--primary-color);
+}
+
+.titulo span {
+    font-size: 1em;
+    color: var(--secondary-color);
+}
+
+/* Contenedores y Cards */
+.doc {
+    
+    padding: 10px;
+}
+
+.doc_btn {
+    padding-top: 10px;
+}
+.card {
+    width: 100%;
+    max-width: 900px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary-color);
+}
+
+/* Cabecera de la tarjeta */
+.card_superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 300px;
+    border-radius: 5px;
+}
+
+.datos_empresa {
+    text-align: right;
+    font-size: 14px;
+}
+
+.datos_empresa h2 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+/* Tablas */
+.tabla_producto {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#numeroRegistro {
+    font-size: 25px;
+}
+
+.tabla_producto th, .tabla_producto td {
+    padding: 7px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.tabla_producto th {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.tabla_producto tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla_producto tr:hover {
+    background-color: #f0f8ff;
+}
+
+/* Sección de precios */
+/* Sección de precios */
+.precios {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    
+}
+
+.pagos {
+    padding-right: 50px;
+}
+
+.estado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.colum_subtotal {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+}
+.colum_descuento {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+}
+.colum_total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.botonDoc {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.botonDoc figure {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.botonDoc figure img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.botonDoc figure:hover img {
+    transform: scale(1.1);
+}
+
+.botonDoc figure .capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.botonDoc figure:hover .capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.botonDoc figure .capa h3 {
+    color: #fff;
+    font-size: 1em;
+}
+
+/* Firmas */
+.info_firmas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.firma_cliente, .firma_propietario {
+    text-align: center;
+    width: 45%;
+    display: grid;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.content {
+    justify-items: center;
+}
+/* Información del Registro */
+.content_info_registro {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    
+    width: 100%;
+    align-items: center;
+}
+
+.content_info_registro .cliente,
+.content_info_registro .registro {
+    width: 45%; /* Ajuste el tamaño de las columnas */
+    padding: 5px;
+}
+
+.content_info_registro .cliente {
+    text-align: left;
+}
+
+.content_info_registro .registro {
+    text-align: right;
+}
+
+/* Estilos dentro de cliente y registro */
+.content_info_registro .cliente h3,
+.content_info_registro .registro h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.content_info_registro .cliente p,
+.content_info_registro .registro p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.content_info_registro .registro .info_item span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.info_detalles {
+    display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .card_superior {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .datos_empresa {
+        text-align: center;
+    }
+
+    .tabla_producto th, .tabla_producto td {
+        font-size: 10px;
+    }
+
+    .botonDoc figure {
+        width: 80px;
+        height: 80px;
+    }
+
+    .precios {
+        width: 100%;
+    }
+}
+
